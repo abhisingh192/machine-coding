@@ -1,7 +1,7 @@
-package service;
+package org.example.service;
 
-import entity.Client;
 import lombok.Data;
+import org.example.entity.Client;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -34,9 +34,6 @@ public class ClientService {
     
     public boolean hasClient(String clientId) {
         // Implementation to check if a client exists
-        if (clientMap.containsKey(clientId)) {
-            return true;
-        }
-        return false;
+        return clientMap.containsKey(clientId);
     }
 }

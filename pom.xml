@@ -11,6 +11,7 @@
   <url>http://maven.apache.org</url>
   <modules>
     <module>appointment_system</module>
+      <module>payment_gateway</module>
   </modules>
 
   <properties>

@@ -23,5 +23,5 @@ APIs -
  - *listSupportedPaymodes()* ✅- show paymodes support by PG. if a client is passed as parameter, all supported paymodes for the clients should be shown.
  - *addSupportForPaymode()* ✅- add paymodes support in the PG. If a client is passed as parameter, add paymode for the clients.
  - *removePaymode()* ✅- remove paymode ( both from PG or client basis parameter)
- - *showDistribution()* - show active distribution percentage of router
+ - *showDistribution() ✅* - show active distribution percentage of router
  - *makePayment( //necessary payment details )*

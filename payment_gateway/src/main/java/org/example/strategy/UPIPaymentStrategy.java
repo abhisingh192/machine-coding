@@ -1,4 +1,4 @@
-package strategy;
+package org.example.strategy;
 
 public class UPIPaymentStrategy implements PaymentStrategy{
     @Override

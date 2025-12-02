@@ -1,4 +1,4 @@
-package strategy;
+package org.example.strategy;
 
 import java.util.concurrent.ThreadLocalRandom;
 

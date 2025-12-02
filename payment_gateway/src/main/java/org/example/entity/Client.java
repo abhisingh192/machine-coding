@@ -1,4 +1,4 @@
-package entity;
+package org.example.entity;
 
 import jdk.jfr.DataAmount;
 import lombok.AllArgsConstructor;

@@ -1,12 +1,15 @@
-package service;
+package org.example.service;
 
-import entity.Client;
-import entity.PaymentMethod;
+
+import lombok.Data;
+import org.example.entity.Client;
+import org.example.entity.PaymentMethod;
 
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
 
+@Data
 public class PayModeService {
     // this is the global map that holds all supported payment methods, client specific pay modes will be in client class
     private final Map<Long, PaymentMethod> payModeMap;
