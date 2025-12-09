@@ -105,20 +105,17 @@ Nestle -> Milk -> 5 -> Total Price : 25
 GetCart(Naruto)
 Empty Cart
 
-# expected response  <brand, category, price, remaining_inventory_count>
+# expected response <brand, category, price, remaining_inventory_count>
 
 SearchItems([Nestle])
-
 Nestle -> Curd-> 90 -> 10
 
 SearchItems([Nestle, Amul], [Curd])
-
 Amul -> Curd -> 50 -> 5
-
 Nestle -> Curd -> 90 -> 10
 
-SearchItems([Nestle], [Curd, Milk, Paneer]) Nestle -> Curd -> 90 -> 10
-
+SearchItems([Nestle], [Curd, Milk, Paneer]) 
+Nestle -> Curd -> 90 -> 10
 Nestle -> Milk -> 60 -> 0
 
 # Checkout(<Name>)
