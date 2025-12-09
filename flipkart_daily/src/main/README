@@ -35,14 +35,14 @@ This exercise assesses the candidates' ability to **design** and **implement** a
 
 **Test cases: (You need not follow the same method signatures and output)**
 
-1. Add/Update Item (brand, category, price)
-2. Add inventory (category,brand, quantity)
-3. Add user (“Name”,”Address”,”Wallet Amount”)
+1. Add/Update Item (brand, category, price) ✅
+2. Add inventory (category,brand, quantity)✅
+3. Add user (“Name”,”Address”,”Wallet Amount”)✅
 4. Search (“brand”,”category”) - expected response <brand, category, price, remaining_inventory_count> **{Bonus}**
-5. Add to cart(user, category, brand, quantity)
-6. Get cart info(user)
-7. Remove from cart
-8. Checkout
+5. Add to cart(user, category, brand, quantity) ✅
+6. Get cart info(user) ✅
+7. Remove from cart ✅
+8. Checkout ✅
 
 **Sample input/output**
 
@@ -97,13 +97,12 @@ AddToCart(Goku, Milk, Nestle, 10)
 # GetCart(<User_Name>)
 
 GetCart(Goku)
-
-Nestle -> Milk - > 10 → Total Price  50
+Nestle -> Milk - > 10 → Total Price 50
 
 GetCart(Jhonny)
+Nestle -> Milk -> 5 -> Total Price : 25 
 
-Nestle -> Milk -> 5 -> Total Price : 25 GetCart(Naruto)
-
+GetCart(Naruto)
 Empty Cart
 
 # expected response  <brand, category, price, remaining_inventory_count>

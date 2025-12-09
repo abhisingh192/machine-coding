@@ -10,7 +10,7 @@ public class Cart {
     private long id;
     private String userName;
 
-    private List<Product> products;
+    private List<InventoryItem> items;
 
     private double totalAmount;
 
