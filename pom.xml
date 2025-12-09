@@ -12,6 +12,9 @@
   <modules>
     <module>appointment_system</module>
       <module>payment_gateway</module>
+      <module>news_feed</module>
+      <module>flipkart_daily</module>
+    <module>flipkart_daily</module>
   </modules>
 
   <properties>

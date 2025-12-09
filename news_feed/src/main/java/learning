@@ -1,0 +1,32 @@
+✅ Why abstract class is the correct choice for FeedItem and not an interface
+
+Your FeedItem will have shared fields between Post and Reply, such as:
+
+id,content,author,createdAt,maybe likes, commentsCount, etc.
+
+An interface cannot hold fields with behavior (other than public static final constants — useless here).
+
+But an abstract class can:
+Hold common variables
+Provide common getters/setters
+Implement shared logic
+
+Still force subclasses to define specific behavior (via abstract methods)
+
+This matches your exact use case.
+| Option                      | Suitable? | Why                                                                                    |
+| --------------------------- | --------- | -------------------------------------------------------------------------------------- |
+| **Interface**               | ❌ No      | Cannot store instance fields, cannot give default implementation for common attributes |
+| **Abstract class**          | ✅ YES     | Can store shared variables, shared logic, and still be extended                        |
+| **Concrete class**          | ❌ No      | You don’t want to instantiate `FeedItem` directly                                      |
+| **Sealed class (Java 17+)** | Optional  | If you want to restrict which classes can extend `FeedItem`                            |
+
+
+
+
+The issue arises because the @RequiredArgsConstructor annotation generates a constructor only for final or @NonNull fields,
+and none of the fields in your User class are marked as final or @NonNull.
+Therefore, the @RequiredArgsConstructor annotation does not generate any constructor.
+
+
+set ka remove operation removes an object only if it is present, otherwise it does nothing and returns false.
