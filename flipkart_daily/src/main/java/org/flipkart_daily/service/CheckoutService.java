@@ -18,8 +18,9 @@ public class CheckoutService {
             User user = userService.getUsers().get(userName);
             double walletBalance = user.getWalletBalance();
             
-            if (cartService.getCarts().isEmpty()) {
+            if (!cartService.getCarts().containsKey(userName) ){
                 System.out.println("No order to checkout");
+                return;
             }
             if(walletBalance>=cartService.getCarts().get(userName).getTotalAmount()) {
                 walletBalance-=cartService.getCarts().get(userName).getTotalAmount();

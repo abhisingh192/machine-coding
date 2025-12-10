@@ -80,11 +80,11 @@ Nestle -> Curd -> 10
 
 #AddUser(<Name>,<Address>,<Wallet Amount>)
 
-AddUser(Jhonny, ”Flipkart Bellandur, Bangalore 560068”,  600)
+AddUser(Jhonny, ”Flipkart Bellandur, Bangalore 560068”, 600)
 
 AddUser(Naruto, ”BTM Layout, Bengaluru, 560042”, 500)
 
-AddUser(Goku, ”Vijay Nagar, Indore, MP”,  3000)
+AddUser(Goku, ”Vijay Nagar, Indore, MP”, 3000)
 
 # AddToCart(<User_Name>, <item_category>, <item_brand>, <units>)
 

@@ -10,5 +10,8 @@ import java.util.Map;
 public class Inventory {
 
     private Map<String,InventoryItem> inventory;
+    public Inventory() {
+        this.inventory = new HashMap<>();
+    }
 
 }

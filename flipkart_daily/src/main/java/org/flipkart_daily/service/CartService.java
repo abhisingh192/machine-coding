@@ -38,7 +38,7 @@ public class CartService {
             item.setQuantity(quantity);
             item.setId(productService.getProducts().get(key).getId());
             cart.getItems().add(item);
-            cart.setTotalAmount(cart.getTotalAmount()+productService.getProducts().get(key).getPrice());
+            cart.setTotalAmount(cart.getTotalAmount()+quantity*productService.getProducts().get(key).getPrice());
             carts.put(name, cart);
         } else {
             System.out.println("User not found.");
@@ -74,10 +74,14 @@ public class CartService {
         
         if (userService.getUsers().containsKey(userName)) {
             Cart userCart = carts.get(userName);
+            if (userCart == null) {
+                System.out.println("Cart is empty for user: " + userName);
+                return;
+            }
             for (InventoryItem item : userCart.getItems()) {
                 System.out.println(item.getBrand() + "->" + item.getCategory() + "->" + item.getQuantity());
             }
-            System.out.println("Total card value: "+userCart.getTotalAmount());
+            System.out.println("Total cart value: "+userCart.getTotalAmount());
 
 
         } else {

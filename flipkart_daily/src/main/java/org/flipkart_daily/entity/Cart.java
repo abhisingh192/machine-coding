@@ -2,6 +2,7 @@ package org.flipkart_daily.entity;
 
 import lombok.Data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -10,7 +11,7 @@ public class Cart {
     private long id;
     private String userName;
 
-    private List<InventoryItem> items;
+    private List<InventoryItem> items = new ArrayList<>();
 
     private double totalAmount;
 
