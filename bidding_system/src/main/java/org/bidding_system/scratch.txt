@@ -1,0 +1,12 @@
+entity
+user -> super coins > 0
+event -> name should be unique(only one event per day)
+bid -> max 5 bids at single go, should have max bid amount worth of super coins
+
+methods:
+addMember(id, name, superCoins) -> void
+addEvent(id, name, prize, date) -> void
+registerMemberToEvent(memberId, eventId) -> void
+submitBids(memberId, eventId, List<Integer> bids) -> void
+declareWinner(eventId) -> Winner
+listWinners(orderBy) -> List<Winner>

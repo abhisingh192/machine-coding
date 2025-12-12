@@ -15,6 +15,7 @@
       <module>news_feed</module>
       <module>flipkart_daily</module>
     <module>flipkart_daily</module>
+    <module>bidding_system</module>
   </modules>
 
   <properties>
