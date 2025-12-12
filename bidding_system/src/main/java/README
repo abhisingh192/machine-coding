@@ -24,9 +24,9 @@ This system aims to enhance member engagement and provide an exciting and reward
 - Members should be able to submit bids for a particular event as per the below conditions
   - a. Member can only submit all bids at single go and at max 5 bids can be submitted 
   - b. Member should have atleast max of 5 bids super coins in his wallet 
-    - Suppose member submit bids -> 100,500,400,800,900
-    - Then member should have at least 900 super coins available
-    - Only the max bid would be deducted from the member wallet
+        - Suppose member submit bids -> 100,500,400,800,900
+        - Then member should have at least 900 super coins available
+        - Only the max bid would be deducted from the member wallet
     In above given example, only 900 super coins will be deducted from member wallet 
   - Each bid should be unique for the member for that event i. Suppose member submit 4 bids -> 100, 200, 300, 400 ii. As each bid has unique value 
   - Each bid should be greater than zero 

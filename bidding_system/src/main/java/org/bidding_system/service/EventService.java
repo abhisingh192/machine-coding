@@ -5,13 +5,14 @@ import org.bidding_system.entity.Event;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
 @Data
 public class EventService {
 
-    private final Map<Long, Event> eventRepository = new HashMap<>();
+    private final Map<Long, Event> eventRepository = new LinkedHashMap<>();
     private final Set<String> eventsNames = new HashSet<>(); // check for duplicate event names
     private static long eventIdCounter = 1;
 
@@ -20,6 +21,10 @@ public class EventService {
         if (eventsNames.contains(name)) {
             System.out.println("Event with name " + name + " already exists.");
             return;
+        }
+        boolean eventExistsToday = eventRepository.values().stream().anyMatch(x-> x.getDate().equalsIgnoreCase(date));
+        if (eventExistsToday) {
+            System.out.println("only one event allowed per day");
         }
         Event event = new Event();
         event.setId(eventIdCounter++);

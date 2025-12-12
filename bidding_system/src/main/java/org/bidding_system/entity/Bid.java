@@ -8,5 +8,6 @@ import java.util.List;
 public class Bid {
     private long userId;
     private long eventId;
+    
     private List<Long> bidAmounts;
 }

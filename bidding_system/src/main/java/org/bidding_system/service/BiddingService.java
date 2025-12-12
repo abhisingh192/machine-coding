@@ -1,9 +1,15 @@
 package org.bidding_system.service;
 
+import lombok.Data;
 import org.bidding_system.entity.Event;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
+@Data
 public class BiddingService {
 
     private final UserService userService;
@@ -11,6 +17,8 @@ public class BiddingService {
     private final EventService eventService;
 
     private final EventRegistrationService eventRegistrationService;
+    
+    private final Map<Long, LinkedHashMap<Long, Long>> eventIdToUserBidMap = new HashMap<>(); 
 
     public BiddingService(UserService userService, EventService eventService, EventRegistrationService eventRegistrationService) {
         this.userService = userService;
@@ -49,8 +57,8 @@ public class BiddingService {
             return;
         }
 
-        int maxBid = bidAmounts.stream().max(Long::compare).orElse(0L).intValue();
-        int minBid = bidAmounts.stream().min(Long::compare).orElse(0L).intValue();
+        long maxBid = bidAmounts.stream().max(Long::compare).orElse(0L).intValue();
+        long minBid = bidAmounts.stream().min(Long::compare).orElse(0L).intValue();
 
         if(minBid==0){
             System.out.println("Bid amounts must be greater than zero.");
@@ -63,9 +71,13 @@ public class BiddingService {
             System.out.println("Bid amounts must be unique.");
             return;
         }
+        
+        if (maxBid>userService.getUserRepository().get(userId).getSuperCoins()) {
+            System.out.println("insufficient super coins: "+ userService.getUserRepository().get(userId).getSuperCoins() + " for placing bid of: "+maxBid);
+        }
+        eventIdToUserBidMap.computeIfAbsent(eventId, k -> new LinkedHashMap<>())   // get inner map
+                .put(userId, minBid);     
 
-
-
-
+        System.out.println("bids submitted successfully");
     }
 }
