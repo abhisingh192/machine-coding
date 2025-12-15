@@ -142,8 +142,9 @@ This system aims to enhance member engagement and provide an exciting and reward
 - REGISTER_MEMBER <member_id> <event_id>
   - Example : REGISTER_MEMBER 1 1
     Output : Akshay registered to the BBD event successfully
-- SUBMIT_BID <member_id> <event_id> <bid_1> <bid_2> <bid_3> <bid_4> <bid_5> a. Example : SUBMIT_BID 1 1 100 200 400 500 600
-  Output : BIDS submitted successfully
+- SUBMIT_BID <member_id> <event_id> <bid_1> <bid_2> <bid_3> <bid_4> <bid_5> a.
+    Example : SUBMIT_BID 1 1 100 200 400 500 600
+    Output : BIDS submitted successfully
   - Example SUBMIT_BID 2 1 100 200 400 500
     Output : BIDS submitted successfully
   - Example : SUBMIT_BID 10 1 100 200 300 400 500

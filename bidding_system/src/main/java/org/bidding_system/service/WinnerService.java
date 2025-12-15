@@ -1,6 +1,7 @@
 package org.bidding_system.service;
 
 import lombok.Data;
+import org.bidding_system.entity.Event;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -42,15 +43,22 @@ public class WinnerService {
     }
     
     public void listPastWinners(String orderBy) {
-        
+
+        int size = eventService.getEventRepository().size();
+        int countOfPastWinners = Math.min(5, size);
+
         if (orderBy.equalsIgnoreCase("ASC")) {
-            List<Map.Entry<Long, Long>> firstFive = new ArrayList<>();
 
             int count = 0;
-            for (Map.Entry<Long, Long> entry : linkedHashMap.entrySet()) {
-                if (count == 5) break;
-                firstFive.add(entry);
+            for (Map.Entry<Long, Event> entry : eventService.getEventRepository().entrySet()) {
+                if (count == countOfPastWinners) break;
+                declareWinnerForEvent(entry.getKey());
                 count++;
+            }
+        } else {
+            List<Map.Entry<Long, Event>> eventList = new ArrayList<>(eventService.getEventRepository().entrySet());
+            for (int i = size - 1; i >= size - countOfPastWinners; i--) {
+                declareWinnerForEvent(eventList.get(i).getKey());
             }
         }
     }

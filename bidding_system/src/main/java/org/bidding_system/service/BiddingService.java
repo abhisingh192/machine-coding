@@ -74,6 +74,7 @@ public class BiddingService {
         
         if (maxBid>userService.getUserRepository().get(userId).getSuperCoins()) {
             System.out.println("insufficient super coins: "+ userService.getUserRepository().get(userId).getSuperCoins() + " for placing bid of: "+maxBid);
+            return;
         }
         eventIdToUserBidMap.computeIfAbsent(eventId, k -> new LinkedHashMap<>())   // get inner map
                 .put(userId, minBid);     

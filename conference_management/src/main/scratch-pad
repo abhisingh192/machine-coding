@@ -1,0 +1,15 @@
+entity
+conference_room
+floor
+building
+booking
+
+APIS
+addBuilding
+addFloor
+addConferenceRoom
+listConferenceRooms
+
+bookConferenceRoom
+cancelBooking
+listBookings

@@ -16,6 +16,7 @@
       <module>flipkart_daily</module>
     <module>flipkart_daily</module>
     <module>bidding_system</module>
+      <module>conference_management</module>
   </modules>
 
   <properties>

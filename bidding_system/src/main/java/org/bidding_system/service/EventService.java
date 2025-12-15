@@ -25,6 +25,7 @@ public class EventService {
         boolean eventExistsToday = eventRepository.values().stream().anyMatch(x-> x.getDate().equalsIgnoreCase(date));
         if (eventExistsToday) {
             System.out.println("only one event allowed per day");
+            return;
         }
         Event event = new Event();
         event.setId(eventIdCounter++);
@@ -33,6 +34,8 @@ public class EventService {
         event.setPrize(prize);
         eventRepository.put(event.getId(), event);
         eventsNames.add(name);
+
+        System.out.println("Event " + name + " added on " + date + " with prize " + prize + ".");
     }
 
 }

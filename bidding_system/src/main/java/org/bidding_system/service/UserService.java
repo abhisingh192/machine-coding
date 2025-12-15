@@ -28,5 +28,6 @@ public class UserService {
         user.setSuperCoins(superCoins);
         userRepository.put(user.getId(), user);
         userNameToIdMap.put(name, user.getId());
+        System.out.println(name + " added with " + superCoins + " SuperCoins.");
     }
 }
