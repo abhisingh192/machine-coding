@@ -1,0 +1,15 @@
+entity:
+user
+vehicle
+ride
+ride_strategy
+vehicle_type(enum)
+
+
+APIs:
+add_user(name, gender, age)
+add_vehicle(owner, car_model, id)
+offer_ride(owner, origin, seats, vehicleModel, id, destination)
+select_ride(requestor, origin, destination, seats, strategy)
+end_ride(ride_id)
+print_ride_stats()
