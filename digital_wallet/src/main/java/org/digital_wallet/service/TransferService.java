@@ -44,12 +44,16 @@ public class TransferService {
         Transaction transaction = new Transaction();
         transaction.setTransactionType(TransactionType.DEBIT);
         transaction.setTransactionId(transactionIdCounter++);
+        transaction.setAmount(amount);
+        transaction.setSenderReceiverName(toUser);
         ledger.computeIfAbsent(fromUser, k -> new ArrayList<>())
                 .add(transaction);        
-        receiverWallet.setBalance(senderWallet.getBalance()+amount);
+        receiverWallet.setBalance(receiverWallet.getBalance()+amount);
         Transaction transaction1 = new Transaction();
         transaction1.setTransactionType(TransactionType.CREDIT);
         transaction1.setTransactionId(transactionIdCounter++);
+        transaction1.setAmount(amount);
+        transaction1.setSenderReceiverName(fromUser);
         ledger.computeIfAbsent(toUser, k -> new ArrayList<>())
                 .add(transaction1);
 
@@ -60,14 +64,14 @@ public class TransferService {
             
             Transaction t2 = new Transaction();
             t2.setTransactionId(transactionIdCounter++);
-            t2.setTransactionType(TransactionType.OFFER);
+            t2.setTransactionType(TransactionType.OFFER1);
             t2.setAmount(10);
             ledger.computeIfAbsent(fromUser, k -> new ArrayList<>())
                     .add(t2);
             
             Transaction t3 = new Transaction();
             t3.setTransactionId(transactionIdCounter++);
-            t3.setTransactionType(TransactionType.OFFER);
+            t3.setTransactionType(TransactionType.OFFER1);
             t3.setAmount(10);
             ledger.computeIfAbsent(toUser, k -> new ArrayList<>())
                     .add(t3);

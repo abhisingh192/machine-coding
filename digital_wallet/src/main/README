@@ -39,11 +39,13 @@ Draco 500
 - TransferMoney Hermione Harry 2
 - TransferMoney Albus Ron 5
 - Overview
+
 Harry 112
 Ron 100.7
 Hermione 112
 Albus 165
 Draco 530
+
 - Statement Harry
 Hermione credit 2
 Offer1 credit 10
@@ -52,8 +54,16 @@ Draco debit 30
 Ron debit 5
 - Offer2
 - Overview
+
 Harry 114
 Ron 100.7
 Hermione 112
 Albus 175
 Draco 535
+
+-------- this is the correct output ----------------
+albus 2 (165) 175
+hermoine 2 (112) 117
+harry 2 (112) 114
+draco 530
+ron 100.7

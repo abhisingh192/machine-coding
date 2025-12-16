@@ -6,6 +6,7 @@ import lombok.Data;
 public class Transaction {
     
     private int transactionId;
+    private String senderReceiverName;
     private TransactionType transactionType;
     private double amount;
     
