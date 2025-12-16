@@ -10,6 +10,7 @@ import java.util.Map;
 public class UserService {
     
     private final Map<String, User> userRepo = new HashMap<>(); //username -> user map
+    private final Map<String, Map<String, Integer>> userRideStats = new HashMap<>(); // username -> {given: x, taken: y}
     private static int userIdCounter = 1;
     
     public void addUser(String name, String gender, int age) {

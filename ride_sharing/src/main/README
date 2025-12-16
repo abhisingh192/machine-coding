@@ -77,7 +77,8 @@ end_ride(2-b)
 end_ride(2-c)
 end_ride(2-d)
 
-Find total rides by user: Rides Taken: Rides that have were taken and have been marked as “ended”
+- Find total rides by user:
+Rides Taken: Rides that were taken and have been marked as “ended”
 Rides Offered: Rides that were offered and have been marked as “ended”.
 Note: Even if the offered ride was not taken by any user, it counts as an offered ride.
 
