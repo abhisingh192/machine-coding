@@ -130,6 +130,8 @@ This system aims to enhance member engagement and provide an exciting and reward
   - Order by ascending or descending
   - Winners should be sorted by event date
 
+
+------------------------------------------------------------------------------------------------------------------------
 ## Commands
 - ADD_MEMBER <number_of_super_coins>
   - Example : ADD_MEMBER 1 akshay 10000

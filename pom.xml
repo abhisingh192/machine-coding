@@ -19,6 +19,7 @@
       <module>conference_management</module>
       <module>digital_wallet</module>
       <module>ride_sharing</module>
+      <module>food_kart</module>
   </modules>
 
   <properties>

@@ -23,6 +23,8 @@ Bonus
       If the account balance goes below <fd_amount> then the FD should be dissolved and the user would need to give the FixedDeposit command again to start a new FD.
     - As an added bonus display the <fd_amount> and remaining transactions in the Overview and Statement command also.
 
+
+-----------------------------------------------------------------------------------------------------------------------
 Sample
 - CreateWallet Harry 100
 - CreateWallet Ron 95.7

@@ -44,6 +44,8 @@ This exercise assesses the candidates' ability to **design** and **implement** a
 7. Remove from cart ✅
 8. Checkout ✅
 
+
+-----------------------------------------------------------------------------------------------------------------------
 **Sample input/output**
 
 # AddItem(<item_brand>, <item_category>, <item_price>)
