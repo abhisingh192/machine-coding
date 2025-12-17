@@ -83,9 +83,9 @@ Rides Offered: Rides that were offered and have been marked as “ended”.
 Note: Even if the offered ride was not taken by any user, it counts as an offered ride.
 
 - print_ride_stats()
-Nandini: 1 Taken, 0 Offered
 Rohan: 1 Taken, 1 Offered
-Shashank: 0 Taken, 1 Offered
-Gaurav: 1 Taken, 0 Offered
-Rahul: 0 Taken, 0 Offered
 Shipra: 0 Taken, 2 Offered
+Rahul: 0 Taken, 0 Offered
+Shashank: 0 Taken, 1 Offered
+Nandini: 1 Taken, 0 Offered
+Gaurav: 1 Taken, 0 Offered

@@ -13,10 +13,11 @@ public class StatsService {
 
     public void getRideStats() {
         for (String userName : userService.getUserRideStats().keySet()) {
-            System.out.println("User: " + userName + ", Rides Given: " +
-                    userService.getUserRideStats().get(userName).getOrDefault("given", 0) +
-                    ", Rides Taken: " +
-                    userService.getUserRideStats().get(userName).getOrDefault("taken", 0));
+            System.out.println("User: " + userName + ", Rides Taken: " +
+                            userService.getUserRideStats().get(userName).getOrDefault("taken", 0) +
+                            ", Rides Given: " +
+                    userService.getUserRideStats().get(userName).getOrDefault("offered", 0)
+                    );
         }
 
     }
