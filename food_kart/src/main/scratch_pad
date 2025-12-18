@@ -10,9 +10,12 @@ entity:
 api:
 - register_user(user_details)
 - login_user(user_id)
+
 - Register_restaurant(restaurant_name, list of serviceable pin-codes, food item name, food item price, initial quantity)
 - update_quantity(restaurant name, quantity to Add)
-- rate_restaurant(restaurant name, rating, comment)
 - show_restaurant(rating/price)
+
+- rate_restaurant(restaurant name, rating, comment)
+
 - place_order(restaurant name, quantity)
 - get_order_history()
