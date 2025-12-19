@@ -14,4 +14,6 @@ public class Restaurant {
     private String foodItem;
     private double price;
     private int currentQuantity;
+    private double averageRating;
+    private List<Review> review;
 }

@@ -54,12 +54,34 @@ public class RestaurantService {
     
     public void listRestaurants(String criteria) {
         if (criteria.equalsIgnoreCase("rating")) {
+            List<String> sortedRestaurantKeys =
+                    restaurantRepo.entrySet()
+                            .stream()
+                            .filter(entry -> entry.getValue().getServiceablePincodes()
+                                    .contains(userService.getUserRepo().get(entry.getKey()).getPincode()))
+                            .sorted((e1, e2) ->
+                                    Double.compare(
+                                            e2.getValue().getAverageRating(),
+                                            e1.getValue().getAverageRating()
+                                    )
+                            )
+                            .map(Map.Entry::getKey)
+                            .toList();
+            for (String key : sortedRestaurantKeys) {
+                Restaurant restaurant = restaurantRepo.get(key);
+                System.out.println("Restaurant Name: " + restaurant.getRestaurantName() +
+                        ", Food Item: " + restaurant.getFoodItem() +
+                        ", Price: " + restaurant.getPrice() +
+                        ", Available Quantity: " + restaurant.getCurrentQuantity());
+            }
             
             
         } else if (criteria.equalsIgnoreCase("price")) {
             List<String> sortedRestaurantKeys =
                     restaurantRepo.entrySet()
                             .stream()
+                            .filter(entry -> entry.getValue().getServiceablePincodes()
+                                    .contains(userService.getUserRepo().get(entry.getKey()).getPincode()))
                             .sorted((e1, e2) ->
                                     Double.compare(
                                             e2.getValue().getPrice(),
@@ -68,6 +90,13 @@ public class RestaurantService {
                             )
                             .map(Map.Entry::getKey)
                             .toList();
+            for (String key : sortedRestaurantKeys) {
+                Restaurant restaurant = restaurantRepo.get(key);
+                System.out.println("Restaurant Name: " + restaurant.getRestaurantName() +
+                        ", Food Item: " + restaurant.getFoodItem() +
+                        ", Price: " + restaurant.getPrice() +
+                        ", Available Quantity: " + restaurant.getCurrentQuantity());
+            }
             
         } else {
             System.out.println("invalid criteria");
