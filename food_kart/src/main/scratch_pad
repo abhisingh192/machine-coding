@@ -15,7 +15,7 @@ api:
 - update_quantity(restaurant name, quantity to Add) ✅
 - show_restaurant(rating/price)✅
 
-- rate_restaurant(restaurant name, rating, comment)
+- rate_restaurant(restaurant name, rating, comment)✅
 
-- place_order(restaurant name, quantity)
-- get_order_history()
+- place_order(restaurant name, quantity)✅
+- get_order_history() ✅

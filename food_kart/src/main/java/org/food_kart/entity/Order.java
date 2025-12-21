@@ -8,4 +8,5 @@ public class Order {
     private int restaurantId;
     private String restaurantName;
     private int quantity;
+    private double totalPrice;
 }
