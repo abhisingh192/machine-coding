@@ -19,27 +19,27 @@ Bonus : Build an Admin view as well to modify the workout info at a center/slot 
 
 
 Commands/Requirements:
-1. REGISTER
+1. REGISTER ✅
 Input: User name, User email, User Phone, User password
 Output: User Id (unique)
 
-2. VIEW the workouts for a day
+2. VIEW the workouts for a day ✅
 Input: Day
 Output: Center(Center ID, Center Name), Slot information(Slot ID, Slot timing, workout type, slot capacity)
 
-3. BOOKING: Check if the user is registered, Check for slot availability and finally book the slot.
+3. BOOKING: Check if the user is registered, Check for slot availability and finally book the slot. ✅
 Input: User ID, Center ID, Slot ID, Day
 Output:
 Success: Booking ID, Slot information(Slot ID, Slot timing, workout type), Center information(Center ID, Center Name)
 
-4. View user plan according to the day:
+4. View user plan according to the day: ✅
 Input: User ID, Day
 Output: User information, Slot information( Slot timing, workout type), Center information(Center Name)
 
 Bonus Commands:
-5. ADMIN Update
+5. ADMIN Update ✅
 Input: Center Id, Slot Id, Slot Capacity
-6. ADMIN ADD
+6. ADMIN ADD ✅
 Input: Center Id, Slot timing, Workout type, Slot Capacity
 
 
