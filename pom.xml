@@ -22,6 +22,7 @@
       <module>food_kart</module>
       <module>zip_reel</module>
       <module>clear_fit</module>
+      <module>bug_bounty</module>
   </modules>
 
   <properties>

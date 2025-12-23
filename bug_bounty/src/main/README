@@ -1,0 +1,71 @@
+- We at Flipkart are planning to build an in-house platform to manage our Bug Bounty Program where anyone can report a
+  potential bug in the Flipkart app and we’ll reward them with a bounty based on the criticality and impact of the bug being reported.
+- For the sake of simplicity, we will be getting the bug reports via email and then Flipkart employees will be registering
+  these bug reports manually into this system we are designing.
+
+**Terminologies**
+- User - Flipkart Employees who will be using this system.
+- Reporter - The end-user who will be reporting via email and getting the bounty reward
+- BugReport - The entity corresponding to the bug reports being shared with Flipkart via email.
+
+
+
+**Requirements**
+
+**Must Have Features**
+
+- We should have a user entity with basic profile like name, email, role, etc.
+((these users will be Flipkart Employees working on these reports)).For the purpose of simplicity, we can hardcode the users initially with basic profile like name, email, role, etc.
+- Ability to login/logout
+- A user should be able to create a BugReport○Required Fields for a BugReport: title, description, status, severity, bountyAmount, reporterEmail, assignedUser, createdTimeStamp, closedTimeStamp).○Possible Values of BugReport Status: Open, ReportReview, Rejected, Acknowledged, BountyReview, BountyPaid, Closed.
+- A user should be able to assign the BugReports to any of the users.
+- A user should be able to change the status of a BugReport assigned to them.
+- A user should be able to edit a BugReport.
+- A user should be able to add comments to a BugReport. (these comments will only be visible to the users and not the reporter)
+- A user with the admin role should be able to delete a BugReport. Users without admin role should be restricted from deleting any BugReport.
+- A user should be able to view
+    - the list of all the BugReports.
+    - BugReports assigned to them.
+    - BugReports assigned to them that are not completed
+    - BugReports assigned to them that are completed.
+
+**Bonus Capabilities**
+
+- Ability to add new users instead of hard-coding
+- Ability to update the existing users.
+- Ability to send communication directly to the reporter. We can simply print the communication message and don’t need to setup any email server, etc.
+- We can preserve the status update timelines to review the BugReport history.
+- We can add a capability where a user can log how much time spent on a BugReport.
+- Ability to ensure the status update happens
+    - From Open state to ReportReview only
+    - From ReportReview to either Rejected or Acknowledged states only
+    - From Rejected to closed only.
+    - From Acknowledged to BountyReview only.
+    - From BountyReview to BountyPaid only.
+    - From BountyPaid to Closed only.
+
+
+Sample Test Case
+
+- preloadUsers([{name: “user1”, role: “admin”}, {name: “user2”, role: “agent”}])
+- login(“user1”)
+- reportBug({ title: “Bug Title 1”, description: “Bug Description 1”, severity: “P0”, reporterEmail: “[reporter.b1@email.com](mailto:reporter.b1@email.com)”})
+- reportBug({ title: “Bug Title 2”, description: “Bug Description 2”, severity: “P0”, reporterEmail: “[reporter.b2@email.com](mailto:reporter.b2@email.com)”})
+- assignBugReport(“Bug Title 1”, “user1”)
+- assignBugReport(“Bug Title 2”, “user2”)
+- updateBugStatus(“Bug Title 1”, “Report Review”)
+- updateBugStatus(“Bug Title 1”, “Acknowledged”)
+- updateBugStatus(“Bug Title 1”, “Bounty Review”)
+- updateBugReport(“Bug Title 1”, { bountyAmount: 1000 })
+- addComment(“Bug Title 1”, “comment text 1”)
+- deleteBugReport(“Bug Title 2”)
+- listAllBugReports()
+- listAssignedReports()
+- listAssignedAndCompletedReports()
+- listAssignedAndIncompleteReports()
+- viewBugReportDetails(“Bug Title 1”)
+- logout()
+- login(“user2”)
+- updateBugStatus(“Bug Title 2”, “Report Review”)
+- updateBugStatus(“Bug Title 2”, “Rejected”)
+- updateBugStatus(“Bug Title 2”, “Closed”)
