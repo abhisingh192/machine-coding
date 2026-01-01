@@ -1,0 +1,32 @@
+entity
+1. user(name, email, role, etc) -> can be hardcoded initially
+2. reporter
+3. bugReport(title, description, status, severity, bountyAmount, reporterEmail, assignedUser, createdTimeStamp, closedTimeStamp)
+
+
+
+
+
+APIs
+1. login(userName)
+2. logout()
+3. reportBug(bugDetails)
+4. changeStatusOfBugReport(bugTitle, newStatus)
+5. assignBugReport(bugTitle, userName)
+6. editBugReport(bugTitle, updatedDetails)
+7. addComment(bugTitle, commentText)
+8. deleteBugReport(bugTitle) -> only admin can delete
+9. listAllBugReports()
+10. listAssignedReports()
+11. listAssignedAndCompletedReports()
+12. listAssignedAndIncompleteReports()
+
+
+
+-----------------
+bonus
+1. addUser(userDetails)
+2. updateUser(userName, updatedDetails)
+3. sendCommunicationToReporter(bugTitle, message)
+4. preserveStatusUpdateTimeline(bugTitle, oldStatus, newStatus, timeStamp)
+5. logTimeSpentOnBugReport(bugTitle, timeSpent)
