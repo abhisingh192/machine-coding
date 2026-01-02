@@ -1,0 +1,81 @@
+Description
+Flipkart is taking initiatives in opening a chain of libraries. It is initially starting a library in Bangalore.
+Based on the response, it may take this initiative further. You need to create a backend system to maintain the functionality of the library.
+
+
+Functional Requirements
+- The users can register and take membership of the library for a certain period of time.
+- There are n different books available in the library and each book having a certain number of copies.
+- A registered user with active membership can borrow a book from the library.
+- A user can hold upto 2 books at a time.
+- One user can not hold two copies of the same book together.
+- A book has to be returned within 30 days or before the membership end date, whichever is earlier.
+- A user can return the book at any point of time. Beyond the due_date, a fine of Rs 1 is applied for a day.
+- A user can view his/her current details along with the book history borrowed by him/her.
+- A user can check the list of available books.
+
+Bonus
+- Implement a system where a user can donate book(s) to extend his/her library membership validity.
+  Consider that donating a book will extend the membership by 90 days.
+
+For simplicity, assume that the initial inventory is already present in the system
+
+
+Application Interface
+- REGISTER user_id user_name start_date end_date
+  Output: Show message for successful/failed registration
+- BORROW user_id book_id issue_date
+  Output: book_id, book_name, author_name, issue_date, due_date
+- RETURN user_id book_id return_date
+  Output: book_id, due_date, return_date, fine amount
+- VIEW user_id
+  Output: user details; Issue History: book_id, book_name, issue_date, due_date, return_date; membership start and end date
+- SHOW_INVENTORY
+  Output: List<book_name, author_name, current count>
+[Bonus]
+- DONATE user_id book_name author_name
+  Output: book_id, count in the inventory, extended membership end_date of user
+
+
+Test cases
+- REGISTER suraj123 suraj 2021-12-04 2022-12-04
+Output: User with id suraj123 registered successfully.
+- SHOW_INVENTORY
+Output:
+Id: 1, Name: Algorithms, Author: Cormen, Count: 5
+Id: 2, Name: Nursery Rhymes, Author: Peter, Count: 1
+- BORROW suraj123 1 2021-12-04
+Output-
+book_id: 1, book_name: Algorithms, author: Cormen, issue_date: 2021-12-04, due_date: 2022-01-03
+- SHOW_INVENTORY
+Output:
+Id: 1, Name: Algorithms, Author: Cormen, Count: 4
+Id: 2, Name: Nursery Rhymes, Author: Peter, Count: 1
+- VIEW suraj123
+Output:
+Name: suraj, Id: suraj123
+Issue History-
+book_id: 1, book_name: Algorithms, author: Cormen, issue_date: 2021-12-04, due_date: 2022-01-04, return_date: null, fine amount: 0
+Membership details- start_date: 2021-12-04, end_date: 2022-12-04
+- RETURN suraj123 1 2021-12-02
+Output: Invalid input. Return date should be after issue date.
+- RETURN suraj123 1 2022-01-10
+Output: book_id: 1, due_date: 2022-01-03, fine_amount: 7
+- SHOW_INVENTORY
+Output:
+Id: 1, Name: Algorithms, Author: Cormen, Count: 5
+Id: 2, Name: Nursery Rhymes, Author: Peter, Count: 1
+[Bonus]
+- DONATE suraj123 Sherlock Doyle
+Output- book_id: 3, Membership end_date extended to: 2023-03-04
+- SHOW_INVENTORY
+Output:
+Id: 1, Name: Algorithms, Author: Cormen, Count: 5
+Id: 2, Name: Nursery Rhymes, Author: Peter, Count: 1
+Id: 3, Name: Sherlock, Author: Doyle, Count: 1
+- VIEW suraj123
+Output:
+Name: suraj, Id: suraj123
+Issue History-
+- book_id: 1, book_name: Algorithms, author: Cormen, issue_date: 2021-12-04, due_date: 2022-01-04, return_date: 2022-01-10, fine amount: 7
+Membership details- start_date: 2021-12-04, end_date: 2023-03-04

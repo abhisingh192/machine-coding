@@ -23,6 +23,7 @@
       <module>zip_reel</module>
       <module>clear_fit</module>
       <module>bug_bounty</module>
+      <module>lib_mgmt_system</module>
   </modules>
 
   <properties>
