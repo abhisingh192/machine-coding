@@ -8,18 +8,18 @@ entity
 
 
 APIs
-1. login(userName)
-2. logout()
-3. reportBug(bugDetails)
-4. changeStatusOfBugReport(bugTitle, newStatus)
-5. assignBugReport(bugTitle, userName)
-6. editBugReport(bugTitle, updatedDetails)
-7. addComment(bugTitle, commentText)
-8. deleteBugReport(bugTitle) -> only admin can delete
+1. login(userName) ✅
+2. logout() ✅
+3. reportBug(bugDetails) ✅
+4. changeStatusOfBugReport(bugTitle, newStatus) ✅
+5. assignBugReport(bugTitle, userName) ✅
+6. editBugReport(bugTitle, updatedDetails) ✅
+7. addComment(bugTitle, commentText) ✅
+8. deleteBugReport(bugTitle) -> only admin can delete ✅
 9. listAllBugReports()
-10. listAssignedReports()
-11. listAssignedAndCompletedReports()
-12. listAssignedAndIncompleteReports()
+10.listAssignedReports()
+11.listAssignedAndCompletedReports()
+12.listAssignedAndIncompleteReports()
 
 
 

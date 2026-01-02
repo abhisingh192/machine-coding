@@ -17,7 +17,8 @@
 - We should have a user entity with basic profile like name, email, role, etc.
 ((these users will be Flipkart Employees working on these reports)).For the purpose of simplicity, we can hardcode the users initially with basic profile like name, email, role, etc.
 - Ability to login/logout
-- A user should be able to create a BugReport○Required Fields for a BugReport: title, description, status, severity, bountyAmount, reporterEmail, assignedUser, createdTimeStamp, closedTimeStamp).○Possible Values of BugReport Status: Open, ReportReview, Rejected, Acknowledged, BountyReview, BountyPaid, Closed.
+- A user should be able to create a BugReport.Required Fields for a BugReport: title, description, status, severity, bountyAmount, reporterEmail, assignedUser, createdTimeStamp, closedTimeStamp).
+  Possible Values of BugReport Status: Open, ReportReview, Rejected, Acknowledged, BountyReview, BountyPaid, Closed.
 - A user should be able to assign the BugReports to any of the users.
 - A user should be able to change the status of a BugReport assigned to them.
 - A user should be able to edit a BugReport.
