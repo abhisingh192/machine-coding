@@ -16,10 +16,10 @@ APIs
 6. editBugReport(bugTitle, updatedDetails) ✅
 7. addComment(bugTitle, commentText) ✅
 8. deleteBugReport(bugTitle) -> only admin can delete ✅
-9. listAllBugReports()
-10.listAssignedReports()
-11.listAssignedAndCompletedReports()
-12.listAssignedAndIncompleteReports()
+9. listAllBugReports ✅
+10.listAssignedReports()✅
+11.listAssignedAndCompletedReports() ✅
+12.listAssignedAndIncompleteReports() ✅
 
 
 
