@@ -1,0 +1,17 @@
+entity
+-user
+-membership
+-inventory
+-inventory_item
+-book
+
+
+
+
+API
+1 register_user(user_id, user_name, start_date, end_date) ✅
+2 borrow_book(user_id, book_id, issue_date) ✅
+3 return_book(user_id, book_id, return_date) ✅
+4 view_user(user_id)
+5 show_inventory() ✅
+6 donate_book(user_id, book_name, author_name) -- Bonus
